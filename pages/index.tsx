@@ -4,16 +4,16 @@ import Image from 'next/image'
 import { PostCard, PostWidget, Categories } from '../components';
 import { getPosts } from '../services';
 
-const posts = [
-  {
-    title:'React with tailwind css',
-    excerpt:'Learn react with tailwind'
-  },
-  {
-    title:'React with nextjs',
-    excerpt:'Learn react with nextjs'
-  }
-]
+// const posts = [
+//   {
+//     title:'React with tailwind css',
+//     excerpt:'Learn react with tailwind'
+//   },
+//   {
+//     title:'React with nextjs',
+//     excerpt:'Learn react with nextjs'
+//   }
+// ]
 
 const Home: NextPage<{posts:any}> = ({posts}) => {
   return (
@@ -28,7 +28,7 @@ const Home: NextPage<{posts:any}> = ({posts}) => {
                {post.title}
               {post.excerpt}
           </div> */}
-          {posts.map((post:any)=>(<PostCard  post={post} key={post.title}/>))}
+          {posts.map((post:any)=>(<PostCard  post={post.node} key={post.title}/>))}
         </div>
         <div className="col-span-1 lg:col-span-4">
           <div className="relative lg:sticky top-8">
