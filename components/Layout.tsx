@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { Children } from 'react'
+import Header from './Header'
 
-type Props = {}
-
-const Layout = (props: Props) => {
+const Layout = (props: {children:any,}) => {
   return (
-    <div>Layout</div>
+    <>
+      <Header></Header>
+      {props.children}
+    </>
   )
 }
 
