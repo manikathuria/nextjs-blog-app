@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { PostCard, PostWidget, Categories } from '../components';
 import { getPosts } from '../services';
+import { GetStaticPaths, GetStaticProps } from 'next'
 
 // const posts = [
 //   {
@@ -42,7 +43,7 @@ const Home: NextPage<{posts:any}> = ({posts}) => {
   )
 }
 
-export async function getStaticProps(){
+export const getStaticProps: GetStaticProps = async (context:any)=>{
   const posts = (await getPosts()) || [];
 
   return {
